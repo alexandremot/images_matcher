@@ -1,19 +1,18 @@
-from classes.sort import Sort
 from pathlib import Path
+from classes.sort import Sort
 
 def main():
-
-    sort = Sort()
-
+    # Cria uma instância da classe Sort
+    comparador = Sort()
+    
+    # Define os diretórios com as imagens
     figma_dir = Path("./figma")
     screenshots_dir = Path("./screenshots")
     
-    pares = sort.encontrar_pares(figma_dir, screenshots_dir)
-    print("\nPares encontrados:")
-    for figma, screenshot in pares:
-        print(f"{figma} -> {screenshot}")
-
-
+    # Encontra os pares correspondentes
+    pares = comparador.encontrar_pares(figma_dir, screenshots_dir)
+    
+    print(pares)
 
 if __name__ == "__main__":
     main()
